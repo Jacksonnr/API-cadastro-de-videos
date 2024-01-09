@@ -1,0 +1,17 @@
+datasource db {
+  url      = env("DATABASE_URL")
+  provider = "sqlite"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Videos {
+  id            String      @id @default(uuid())
+  titulo        String   
+  descricao     String   
+  url           String
+
+  @@map("videos")
+}
